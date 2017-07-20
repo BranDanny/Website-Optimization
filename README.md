@@ -10,9 +10,9 @@
 
 优化后检测达到97分.
 
-##去除卡顿
+## 去除卡顿
 
-###帧数
+### 帧数
 
 通过分析main.js, 并录制Performance过程后发现:
 
@@ -21,7 +21,7 @@
 
 优化后重新录制Performance, 平均帧数达到60fps.
 
-###计算效率
+### 计算效率
 通过分析main.js, 并录制Performance过程后发现:
 
 * 性能瓶颈为**changePizzaSizes()**函数
@@ -31,6 +31,6 @@
 
 优化后滑块调整大小时间约为0.5ms
 
-##备注
+## 备注
 * 最终提交为压缩后版本, 源文件在/src目录和views/src目录中
 * gulp配置文件 gulpfile.js 和 package.json 在根目录下
