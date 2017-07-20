@@ -1,0 +1,20 @@
+{
+  "name": "webop",
+  "version": "1.0.0",
+  "description": "this is Udacity project2",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "performance"
+  ],
+  "author": "Brandanny",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-uglify": "^3.0.0"
+  }
+}
