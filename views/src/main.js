@@ -433,7 +433,7 @@ var resizePizzas = function(size) {
       default:
         console.log("bug in sizeSwitcher");
     }
-    var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
+    var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
     for (var i = 0; i < randomPizzas.length; i++) {
       randomPizzas[i].style.width = newwidth + "%";
     }
@@ -486,9 +486,12 @@ function updatePositions() {
 
   var items = document.querySelectorAll('.mover');
   var sTop = document.body.scrollTop;
-  for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((sTop / 1250) + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+	var phase = [];
+	for (var i = 0; i < 5; i++) {
+    phase.push(Math.sin(sTop / 1250 + i) * 100);
+}
+  for (var i = 0, max = items.length; i < max; i++) {
+    items[i].style.left = items[i].basicLeft + phase[i%5] + 'px';
   }
 
   // 再次使用User Timing API。这很值得学习
@@ -502,7 +505,10 @@ function updatePositions() {
 }
 
 // 在页面滚动时运行updatePositions函数
-window.addEventListener('scroll', updatePositions);
+window.addEventListener('scroll', requestUpdate);
+function requestUpdate() {
+  requestAnimationFrame(updatePositions);
+}
 
 // 当页面加载时生成披萨滑窗
 document.addEventListener('DOMContentLoaded', function() {

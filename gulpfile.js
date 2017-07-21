@@ -15,7 +15,7 @@ gulp.task('testHtmlmin', function () {
     minifyCSS: true//—πÀı“≥√ÊCSS
   };
 
-  gulp.src('./*.html')
+  gulp.src('src/*.html')
     .pipe(htmlmin(options))
     .pipe(gulp.dest('dist/html'));
   gulp.src('views/*.html')
@@ -36,7 +36,7 @@ gulp.task('jsmin', function () {
   gulp.src('js/*.js')
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'));
-  gulp.src('views/js/*.js')
+  gulp.src('views/src/*.js')
     .pipe(uglify())
     .pipe(gulp.dest('views/dist/js'));
 });
