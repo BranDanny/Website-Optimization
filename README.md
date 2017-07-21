@@ -27,9 +27,9 @@
 ### 计算效率
 通过分析main.js, 并录制Performance过程后发现:
 
-* 性能瓶颈为**changePizzaSizes()**函数
-* 将**document.querySelectorAll(".randomPizzaContainer")**在循环体外保存为一个变量
-* 删除**determinDX()**函数
+* 性能瓶颈为** changePizzaSizes() **函数
+* 将** document.querySelectorAll(".randomPizzaContainer") **在循环体外保存为一个变量
+* 删除** determinDX() **函数
 * 将披萨width值直接用**%**表示
 
 优化后滑块调整大小时间约为0.5ms
